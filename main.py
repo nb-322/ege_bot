@@ -26,7 +26,7 @@ def arr_gen(key):
     return q_arr
 
 def main_kb():
-    kb1 = types.KeyboardButton("Начать жестко ботать 4 номер❗️❗️❗️")
+    kb1 = types.KeyboardButton("Начать жестко ботать 4 номер❗️❗️❗️(нажми меня)")
     markup = types.ReplyKeyboardMarkup()
     markup.add(kb1)
     return markup
@@ -97,6 +97,10 @@ def start(message):
 def ex4_start(message):
     if message.text == "Начать жестко ботать 4 номер❗️❗️❗️":
         ex4_main(message, -1,[0,0,0,0], 0,[]   )
+    else:
+        markup = main_kb()
+        bot.send_message(message.chat.id, "ЕГЭ НАЧАЛОСЬ !!!", reply_markup=markup)
+
 
 
 
