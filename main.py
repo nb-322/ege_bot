@@ -49,14 +49,21 @@ def ex4_kb(q_arr):
     markup.add(item5)
     return markup
 def ex4_main(message, key,q_arr, streak, wrong_ans):
-   
+    if streak == 5:
+        bot.send_message(message.chat.id, "Неплохой стри).....")
+    elif streak == 10:
+        bot.send_message(message.chat.id, "Хороший стрик)....")
+    elif streak == 15:
+        bot.send_message(message.chat.id, "ОГРОМНЫЙ СТРИК❗️❗️❗️")
+    elif streak ==20:
+        bot.send_message(message.chat.id, "ЭТОТ СТРИК ПРОСТО ГИГАНТСКИЙ")
     if message.text=="Молю хватит🙏🙏🙏":
 
         markup = main_kb()
         bot.send_message(message.chat.id, "Как прикажете 😈", reply_markup=markup)
         if len(wrong_ans)!=0:
             s = ', '.join(wrong_ans)
-            z = f'Вам стоит повторить слова: {s}'
+            z = f'Вам стоит повторить слова: {s}, вы все равно молодец).....'
             bot.send_message(message.chat.id, z)
         else:
             bot.send_message(message.chat.id, "Вы ХОРОШО ПОСТАРАЛИСЬ)..... ошибок не было❗️❗️❗️❗️")
@@ -85,7 +92,7 @@ def ex4_main(message, key,q_arr, streak, wrong_ans):
         ind = wrong_arr.index(message.text)
         wrong_ans.append(right_arr[ind])
         wrong_ans.append(q_arr[key])
-        s = f'ОШИБКА НОВИЧКА❗️ правильный ответ ❗️❗️❗️{q_arr[key]}❗️❗️❗️ ВАШЕМУ СТРИКУ КОНЕЦ)'
+        s = f'ОШИБКА НОВИЧКА❗️ правильный ответ ❗️❗️❗️{q_arr[key]}❗️❗️❗️ есть над чем поработать).....'
         streak = 0
         print(q_arr)
         bot.send_message(message.chat.id, s)
