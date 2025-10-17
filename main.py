@@ -70,9 +70,9 @@ def ex_main(message, key,q_arr, streak, wrong_ans, ex,right_arr, wrong_arr):
         q_arr = arr_gen(key, right_arr,wrong_arr)
         markup = ex_kb(q_arr)
         if ex==4:
-            msg = bot.send_message(message.chat.id, f"Выберите вариант, где ударение поставлено верно: \n {', '.join(q_arr)}", reply_markup=markup)
+            msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {', '.join(q_arr)}", reply_markup=markup)
         elif ex==12:
-            msg = bot.send_message(message.chat.id, f"Выберите вариант, где ударение поставлено верно: \n {z.join(q_arr)}", reply_markup=markup)
+            msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {z.join(q_arr)}", reply_markup=markup)
         bot.register_next_step_handler(msg, lambda message: ex_main(message,key,q_arr, streak, wrong_ans,ex,right_arr, wrong_arr))
     elif not(message.text in ["1","2","3","4"]):
         markup = ex_kb(q_arr)
@@ -86,9 +86,9 @@ def ex_main(message, key,q_arr, streak, wrong_ans, ex,right_arr, wrong_arr):
         q_arr = arr_gen(key, right_arr,wrong_arr)
         markup = ex_kb(q_arr)
         if ex==4:
-            msg = bot.send_message(message.chat.id, f"Выберите вариант, где ударение поставлено верно: \n {', '.join(q_arr)}", reply_markup=markup)
+            msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {', '.join(q_arr)}", reply_markup=markup)
         elif ex==12:
-            msg = bot.send_message(message.chat.id, f"Выберите вариант, где ударение поставлено верно: \n {z.join(q_arr)}", reply_markup=markup)
+            msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {z.join(q_arr)}", reply_markup=markup)
         bot.register_next_step_handler(msg, lambda message: ex_main(message,key,q_arr, streak,wrong_ans,ex,right_arr, wrong_arr))
     elif message.text!=key:
         streak = 0
@@ -105,9 +105,9 @@ def ex_main(message, key,q_arr, streak, wrong_ans, ex,right_arr, wrong_arr):
         q_arr = arr_gen(key, right_arr,wrong_arr)
         markup = ex_kb(q_arr)
         if ex==4:
-            msg = bot.send_message(message.chat.id, f"Выберите вариант, где ударение поставлено верно: \n {', '.join(q_arr)}", reply_markup=markup)
+            msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {', '.join(q_arr)}", reply_markup=markup)
         elif ex==12:
-            msg = bot.send_message(message.chat.id, f"Выберите вариант, где ударение поставлено верно: \n {z.join(q_arr)}", reply_markup=markup)
+            msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {z.join(q_arr)}", reply_markup=markup)
         bot.register_next_step_handler(msg, lambda message: ex_main(message,key,q_arr, streak,wrong_ans,ex,right_arr, wrong_arr))
     
 @bot.message_handler(commands=["start"])
