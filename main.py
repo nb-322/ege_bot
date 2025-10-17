@@ -90,7 +90,7 @@ def ex_main(message, key,q_arr, streak, wrong_ans, ex,right_arr, wrong_arr):
         elif ex==12:
             msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {z.join(q_arr)}", reply_markup=markup)
         bot.register_next_step_handler(msg, lambda message: ex_main(message,key,q_arr, streak,wrong_ans,ex,right_arr, wrong_arr))
-    elif message.text-1!=key:
+    elif message.text-1 !=key:
         streak = 0
         
         if ex==4:
