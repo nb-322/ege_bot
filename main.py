@@ -78,7 +78,7 @@ def ex_main(message, key,q_arr, streak, wrong_ans, ex,right_arr, wrong_arr):
         markup = ex_kb(q_arr)
         msg = bot.send_message(message.chat.id, "Это ваще че отвечай давай😡😡😡", reply_markup=markup)
         bot.register_next_step_handler(msg, lambda message: ex_main(message,key,q_arr, streak,wrong_ans,ex,right_arr, wrong_arr))
-    elif int(message.text)==key-1:
+    elif int(message.text)-1==key:
         streak+=1
         s = f"Верно! R E S P E C T 💯 ВАШ СТРИК ОТВЕТОВ: {streak}"
         bot.send_message(message.chat.id, s)
@@ -90,7 +90,7 @@ def ex_main(message, key,q_arr, streak, wrong_ans, ex,right_arr, wrong_arr):
         elif ex==12:
             msg = bot.send_message(message.chat.id, f"Выберите верный вариант: {z.join(q_arr)}", reply_markup=markup)
         bot.register_next_step_handler(msg, lambda message: ex_main(message,key,q_arr, streak,wrong_ans,ex,right_arr, wrong_arr))
-    elif message.text!=key:
+    elif message.text-1!=key:
         streak = 0
         
         if ex==4:
